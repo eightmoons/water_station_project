@@ -1,3 +1,6 @@
+<?php
+$products_active = "active";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +41,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -49,29 +53,10 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img class="logo" src="img/fgblogo.png"> FGB 888 Water Refilling Station </img>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="products.html" class="nav-item nav-link active">Products</a>
-                <a href="tutorials.html" class="nav-item nav-link">Tutorials</a>
-                <a href="aboutus.html" class="nav-item nav-link">About Us</a>
-				<a href="contacts.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                </div>
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Schedule Now!<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+  
+    <?php require_once "header.php"; ?>
+	
     <!-- Navbar End -->
 
 
