@@ -1,0 +1,9 @@
+CREATE DATABASE water_station_db;
+
+CREATE TABLE ws_users (
+    id INT PRIMARY KEY auto_increment not null,
+    username VARCHAR(128) UNIQUE NOT NULL,
+    password VARCHAR(128) NOT NULL,
+);
+
+INSERT INTO ws_users (username, password) VALUE ('admin', 'admin');
