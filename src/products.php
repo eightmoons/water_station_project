@@ -1,6 +1,27 @@
 <?php
 session_start();
 $products_active = "active";
+function createProduct($is_logged_in, $name, $price) {
+    $productName = $is_logged_in ? '<div class="col-md-10"><h4>'.$name.'</h4></div>' : '<div class="col-md-10"><h4>'.$name.'</h4></div>';
+    $productName = $productName . ($is_logged_in ? '<div class="col-md-2"><div class="row"><div class="col-md-6"><span><a href="#">Edit</a></span></div><div class="col-md-6"><span><a href="#">Delete</a></span></div></div></div>': '');
+    $product = '
+    <div class="row shadow p-3 mb-5 bg-white rounded ">
+    <div class="row">
+        '.  $productName  .'
+    </div>
+    <div class="row">
+        <div class="col-md-6 "><img src="/img/Unknown.png" class="img-fluid"></div>
+        <div class="col-md-6">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"><h5>'.$price.' Php</h5></div>
+    </div>
+    </div>';
+    return $product;
+  }
+  
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,50 +82,38 @@ $products_active = "active";
     <!-- Navbar End -->
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <div >
 
+    <div class="container mt-5">
 
+    <h1>Products <?php echo isset($_SESSION['uid']) ?'<span class="btn btn-success">Add Products</span>' : ''; ?></h1> 
+    <?php
+    $is_logged_in = isset($_SESSION['uid']);
+        
+    echo createProduct($is_logged_in, 'Basic Tubig Plan', 500.00);
+    echo createProduct($is_logged_in, 'Pro Tubig Plan', 1500.00);
+    echo createProduct($is_logged_in, 'Business Tubig Plan', 2500.00);
 
-<footer>
-		<div class="footer-content">
-			<h3>FGB 888 MISSION</h3>
-			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
-			<ul class="socials">
-				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
-				<li><a href="https://www.instagram.com/"><i class="gg-instagram"></i></a></li>				
-			</ul>
-		</div>
-		<div class="footer-bottom">
-			<p>copyright &copy;2020 <span> FGB 888 </span></p>
-		</div>
-	</footer>
-	
+    ?>
+
+    <h1><span class="btn btn-warning">Inquire Now!</span></h1>
+    </div>
+
+    <footer class="row footer">
+            <div class="footer-content">
+                <h3>FGB 888 MISSION</h3>
+                <p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
+                <ul class="socials">
+                    <li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="gg-instagram"></i></a></li>				
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy;2020 <span> FGB 888 </span></p>
+            </div>
+    </footer>
+    </div>
 
     
 
