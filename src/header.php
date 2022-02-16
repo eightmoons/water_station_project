@@ -35,8 +35,9 @@ if (isset($_SESSION['uid'])) {
                 <?php 
                 if (isset($current_user)) {
                     echo '
-                    <div class="dropdown ">
-                    <a class="nav-item nav-link">$current_user</button>
+                    <div class="dropdown
+                    ">
+                    <a class="nav-item nav-link">'. $current_user . '</button>
                     <div class="dropdown-content">
                         <a href="logout.php">Logout</a>
                     </div>

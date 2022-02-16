@@ -1,5 +1,5 @@
 <?php 
-$servername = "localhost:9906";
+$servername = "localhost:3306";
 $username = "root";
-$password = "rootpwd"; 
-$db = "water_station_db";
+$password = ""; 
+$db = "water_station_db1";

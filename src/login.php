@@ -6,7 +6,7 @@ if (!isset($_SESSION['uid'])) {
     require_once "db.php";
     $conn = new mysqli($servername, $username, $password, $db);
 
-    $sql = "SELECT * FROM `ws_users` WHERE username=`" . $_POST['username'] . "`";
+    $sql = "SELECT * FROM `ws_users` WHERE username='" .$_POST['username']. "'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {

@@ -1,12 +1,4 @@
 <?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-    
-}
-else {
-    session_destroy();
-}
-
-
-header("Location: index.php");
-exit;
+session_start();
+unset($_SESSION["uid"]);  
+header("Location:index.php");

@@ -59,38 +59,28 @@ $contact_active = "active";
 	
     <!-- Navbar End -->
 
+    <main role="main" class="container bodyy px-5">
+        <h1>Contact Us</h1>
+        <div class="row gx-5">
+            <div class="col-md-5 col-sm-12 shadow p-3 mb-5 bg-white rounded ">
+                <h2 class="mt-5 text-center">Contact Info</h1>
+                <div class="row">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Landline info: </strong>+63 02 555 1112</li>
+                        <li class="list-group-item"><strong>Cellphone info: </strong>+639991231234</li>
+                        <li class="list-group-item"><strong>Email: </strong> contactus@fgb888.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1"></div>
+            <div class="col-md-5 col-sm-11 shadow p-3 mb-5 bg-white rounded align-right">
+                <h2 class="mt-5 text-center">Book an appointment</h1> 
+                <div class="btn btn-large btn-success btn-block container px-5 booknow">Book now</div>
+            </div>
+        </div>
+    </main>
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<footer>
+    <footer class="footer">
 		<div class="footer-content">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>

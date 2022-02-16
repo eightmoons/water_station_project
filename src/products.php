@@ -1,4 +1,5 @@
 <?php
+session_start();
 $products_active = "active";
 ?>
 <!DOCTYPE html>
