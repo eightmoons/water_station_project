@@ -2,4 +2,4 @@
 $servername = "localhost:3306";
 $username = "root";
 $password = ""; 
-$db = "water_station_db1";
+$db = "water_station_db";

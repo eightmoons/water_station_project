@@ -86,9 +86,9 @@ function createProduct($is_logged_in, $name, $price) {
 
     <div class="container mt-5">
 
-    <h1>Products <?php echo isset($_SESSION['uid']) ?'<span class="btn btn-success">Add Products</span>' : ''; ?></h1> 
+    <h1>Products <?php echo true ?'<span class="btn btn-success">Add Products</span>' : ''; ?></h1> 
     <?php
-    $is_logged_in = isset($_SESSION['uid']);
+    $is_logged_in = true;
         
     echo createProduct($is_logged_in, 'Basic Tubig Plan', 500.00);
     echo createProduct($is_logged_in, 'Pro Tubig Plan', 1500.00);
