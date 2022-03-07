@@ -11,7 +11,7 @@ use lib\domain\repository\UserRepository;
 class ReadUserById extends BaseUseCase
 {
     public function __construct(
-        private readonly private readonly UserRepository $repository
+        private readonly UserRepository $repository
     ) { }
 
     public function __invoke(ReadUserParams|BaseParams $params): User

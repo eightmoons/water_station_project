@@ -1,4 +1,4 @@
-<?php
+<?php namespace lib\app\widgets;
 
 class FooterWidget
 {

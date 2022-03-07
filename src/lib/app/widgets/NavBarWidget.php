@@ -1,6 +1,4 @@
-<?php
-
-namespace lib\app\widgets;
+<?php namespace lib\app\widgets;
 
 use lib\domain\models\User;
 use lib\domain\params\ReadUserParams;

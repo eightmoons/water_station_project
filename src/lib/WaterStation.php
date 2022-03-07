@@ -2,6 +2,7 @@
 
 namespace lib;
 
+
 use JetBrains\PhpStorm\Pure;
 use lib\data\db\AppDatabase;
 use lib\data\repository\ProductRepositoryImpl;
@@ -61,7 +62,7 @@ class WaterStation
         $this->logOutUseCase = new LogOutUseCase($this->userRepository);
         $this->readUserById = new ReadUserById($this->userRepository);
     }
-    private function __clone() {}
-    private function __sleep() {}
-    private function __wakeup() {}
+    public function __clone() {}
+    public function __sleep() {}
+    public function __wakeup() {}
 }

@@ -9,7 +9,7 @@ use lib\domain\repository\UserRepository;
 class LogOutUseCase extends BaseUseCase {
 
     public function __construct(
-        private readonly private readonly UserRepository $repository
+        private readonly UserRepository $repository
     ) { }
 
     public function __invoke(NoParams|BaseParams $params): bool
