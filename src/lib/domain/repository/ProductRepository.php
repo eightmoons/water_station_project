@@ -8,9 +8,9 @@ use lib\domain\params\DeleteProductParams;
 use lib\domain\params\EditProductParams;
 use lib\domain\params\LoadProductListParams;
 
-abstract class ProductRepository {
-    abstract public function loadProductList(LoadProductListParams $params): Array;
-    abstract public function createProduct(CreateProductParams $params): Product;
-    abstract public function editProduct(EditProductParams $params): Product;
-    abstract public function deleteProduct(DeleteProductParams $params): bool;
+interface ProductRepository {
+    public function loadProductList(LoadProductListParams $params): array;
+    public function createProduct(CreateProductParams $params): Product;
+    public function editProduct(EditProductParams $params): Product;
+    public function deleteProduct(DeleteProductParams $params): bool;
 }

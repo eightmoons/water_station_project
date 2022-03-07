@@ -4,11 +4,12 @@ namespace lib\domain\models;
 
 class Product {
     public function __construct(
-        int $id,
-        string $name,
-        string $description,
-        string $image,
-        float $price,
-        string $video
-    ) { }
+        public readonly int $id,
+        public readonly string $name,
+        public readonly string $description,
+        public readonly string $image,
+        public readonly float $price,
+        public readonly string $video
+    ) {
+    }
 }

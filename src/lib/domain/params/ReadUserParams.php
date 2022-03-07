@@ -2,8 +2,12 @@
 
 namespace lib\domain\params;
 
-class DeleteProductParams extends BaseParams {
+class ReadUserParams extends BaseParams
+{
     public function __construct(
         public readonly int $id
-    ) { }
+    )
+    {
+    }
+
 }

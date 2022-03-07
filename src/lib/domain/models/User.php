@@ -4,8 +4,8 @@ namespace lib\domain\models;
 
 class User {
     public function __construct(
-        int $id,
-        string $username,
-        string $password
+        public readonly int $id,
+        public readonly string $username,
+        public readonly string $password
     ) { }
 }

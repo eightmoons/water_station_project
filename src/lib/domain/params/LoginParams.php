@@ -4,7 +4,7 @@ namespace lib\domain\params;
 
 class LoginParams extends BaseParams {
     public function __construct(
-        int $username,
-        string $password
+        public readonly string $username,
+        public readonly string $password
     ) { }
 }
