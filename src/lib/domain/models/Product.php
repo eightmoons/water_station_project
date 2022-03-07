@@ -7,9 +7,8 @@ class Product {
         public readonly int $id,
         public readonly string $name,
         public readonly string $description,
-        public readonly string $image,
-        public readonly float $price,
-        public readonly string $video
+        public readonly string $items,
+        public readonly float $price
     ) {
     }
 }

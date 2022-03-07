@@ -16,7 +16,7 @@ class NavBarWidget {
         $this->user = $id == null ? null : $readUserById(new ReadUserParams($this->id));
     }
 
-    public function __invoke(int $page): string
+    public function build(int $page): string
     {
         $index_active = $page == 1 ? "active" : "";
         $products_active = $page == 2 ? "active" : "";
