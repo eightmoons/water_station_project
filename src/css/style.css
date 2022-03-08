@@ -284,21 +284,21 @@
 	position: relative;
 	height: 100%;
 	width:100%;
-	background: url('https://cdn.create.vista.com/api/media/medium/184997412/stock-photo-rows-large-blue-water-bottles?token=');
+	background: url('../img/stock-1.jpeg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 	font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
-	background: url('https://cdn.create.vista.com/api/media/medium/184408802/stock-photo-bottles-glasses-antioxidant-drink-business?token=');
+	background: url('../img/stock-2.jpeg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 		font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
-	background: url('https://cdn.create.vista.com/api/media/medium/184996676/stock-photo-water?token=');
+	background: url('../img/stock-3.jpeg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
@@ -492,9 +492,3 @@ h1{
 	font-family: 'Questrial', sans-serif;
 	text-align: justify
 }
-
-
-
-
-
-
