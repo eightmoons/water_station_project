@@ -26,20 +26,21 @@ class ProductDaoImpl extends ProductDao {
     function createProduct(CreateProductParams $params): Product
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare();
-        $stmt->bind_param();
+        $stmt = $conn->prepare("INSERT INTO ws_products (name, description, items, price) VALUES (?,?,?,?)");
+        $stmt->bind_param('sssi', $params->name, $params->description, $params->items, $params->price);
         $stmt->execute();
         $result = $stmt->get_result();
-
+        return $this->readProduct($stmt->insert_id);
     }
 
     function editProduct(EditProductParams $params): Product
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare();
-        $stmt->bind_param();
+        $stmt = $conn->prepare("UPDATE ws_products SET name=?,description=?,items=?,price=? WHERE id=?");
+        $stmt->bind_param('sssii', $params->name, $params->description, $params->items, $params->price, $params->id);
         $stmt->execute();
         $result = $stmt->get_result();
+        return $this->readProduct($stmt->insert_id);
     }
 
     function deleteProduct(DeleteProductParams $params): bool
@@ -65,9 +66,9 @@ class ProductDaoImpl extends ProductDao {
                     $row['id'],
                     $row['name'],
                     $row['description'],
-                    $row['image'],
+                    $row['items'],
                     $row['price'],
-                    $row['video']);
+                );
                 array_push($products, $product);
             }
         }
@@ -88,9 +89,9 @@ class ProductDaoImpl extends ProductDao {
                     $row['id'],
                     $row['name'],
                     $row['description'],
-                    $row['image'],
+                    $row['items'],
                     $row['price'],
-                    $row['video']);
+                );
             }
         }
         return $product;

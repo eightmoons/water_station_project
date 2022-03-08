@@ -19,21 +19,21 @@ class ProductRepositoryImpl extends ProductRepository
 
     public function loadProductList(LoadProductListParams $params): array
     {
-
+        return $this->dao->loadProductList($params);
     }
 
     public function createProduct(CreateProductParams $params): Product
     {
-        // TODO: Implement createProduct() method.
+        return $this->dao->createProduct($params);
     }
 
     public function editProduct(EditProductParams $params): Product
     {
-        // TODO: Implement editProduct() method.
+        return $this->dao->editProduct($params);
     }
 
     public function deleteProduct(DeleteProductParams $params): bool
     {
-        // TODO: Implement deleteProduct() method.
+        return $this->dao->deleteProduct($params);
     }
 }

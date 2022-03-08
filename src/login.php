@@ -1,32 +1,36 @@
 <?php
+
 session_start();
 
-if (!isset($_SESSION['uid'])) {
-  if (isset($_POST['submit'])) {
-    require_once "db.php";
-    $conn = new mysqli($servername, $username, $password, $db);
+require __DIR__ . '/lib/__init__.php';
 
-    $sql = "SELECT * FROM `ws_users` WHERE username='" .$_POST['username']. "'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-          if ($row['password'] == $_POST['password']) {
-            $current_user = $row['username'];
-            $_SESSION['uid'] = $row['id'];
+use lib\domain\params\LoginParams;
+use lib\WaterStation;
+
+
+$error = false;
+if (!isset($_SESSION['id'])) {
+    if (isset($_POST['submit'])) {
+        $auth = WaterStation::instance()->loginUseCase;
+        $params = new LoginParams(
+            $_POST['username'],
+            $_POST['password']
+        );
+        $uid = $auth($params);
+        if (!is_null($uid)) {
+            $_SESSION['id'] = $uid->id;
             header("Location: index.php");
             exit;
-          }
-          else {
-            $success = false;
-          }
+        }
+        else {
+            $error = true;
         }
     }
-    else {
-        unset($_SESSION['uid']);
-    } 
-  }
-  
+} else {
+    header("Location: index.php");
+    exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,11 +53,11 @@ if (!isset($_SESSION['uid'])) {
       <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
         <div class="user animate__animated animate__fadeInUpBig animate__delay-1s">
           <i class="bx bxs-user-circle"></i>
-          <input type="text" placeholder="Username" name="username" />
+          <input type="text" placeholder="Username" name="username" required/>
         </div>
         <div class="pass animate__animated animate__fadeInUpBig animate__delay-1s">
           <i class="bx bxs-lock-alt"></i>
-          <input type="password" placeholder="Password" name="password" />
+          <input type="password" placeholder="Password" name="password" required />
         </div>
         <div class="btn">
         <button class="animate__animated animate__bounceInUp animate__delay-2s" name="submit" >Login</button>

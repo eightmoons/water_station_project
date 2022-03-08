@@ -14,7 +14,7 @@ class ReadUserById extends BaseUseCase
         private readonly UserRepository $repository
     ) { }
 
-    public function __invoke(ReadUserParams|BaseParams $params): User
+    public function __invoke(ReadUserParams|BaseParams $params): ?User
     {
         return $this->repository->readUserById($params);
     }

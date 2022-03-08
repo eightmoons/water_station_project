@@ -13,41 +13,52 @@ class ProductWidget {
     }
 
     public function editMode(): string {
-        if ($this->product == null) {
+        $isCreate = false;
+        if (is_null($this->product)) {
+            $isCreate = true;
             $this->product = new Product(0, "", "", "", 1);
         }
+        $controlButtons = !$isCreate ?
+            <<<SaveBtns
+                    <button type="submit" class="btn btn-primary" name="action" value="save">Save</button>
+                    <button type="submit" class="btn btn-primary" name="action" value="cancel">Cancel</button>
+            SaveBtns :
+            <<<CreateBtns
+                    <button type="submit" class="btn btn-primary" name="action" value="submit">Add</button>
+            CreateBtns;
+
+
         $id = $this->product->id;
         return <<<Product
-        <form  class="row" action="products.php" method="post">
+        <form  class="row  shadow p-3 mb-5 bg-body rounded" action="products.php" method="post">
             <input type="hidden" name="id" value="$id"/>
             <div class="form-group row">
                 <label for="name$id" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name$id" placeholder="Name" required value="{$this->product->name}">
+                    <input type="text" class="form-control" id="name$id" placeholder="Name" name="name" required value="{$this->product->name}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="price$id" class="col-sm-2 col-form-label">Price</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="price$id" placeholder="Price" required value="{$this->product->price}">
+                    <input type="number" step="0.01" min="0" class="form-control" id="price$id" name="price" placeholder="Price" required value="{$this->product->price}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="desc$id" class="col-sm-2 col-form-label">Description</label>
                 <div class="col-sm-10">
-                    <textarea type="text" class="form-control" id="desc$id" placeholder="Description" required>{$this->product->description}</textarea>
+                    <textarea type="text" class="form-control" id="desc$id" name="description" placeholder="Description" required>{$this->product->description}</textarea>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="items$id" class="col-sm-2 col-form-label">Items</label>
                 <div class="col-sm-10">
-                    <textarea type="text" class="form-control" id="items$id" rows="7" required>{$this->product->items}</textarea>
+                    <textarea type="text" class="form-control" id="items$id" name="items" rows="7" required>{$this->product->items}</textarea>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button type="submit" class="btn btn-primary">Cancel</button>
+                    $controlButtons
                 </div>
             </div>
         </form>
@@ -66,26 +77,27 @@ class ProductWidget {
         foreach ($items as $item) {
             $itemMapped = $itemMapped . "<li>$item</li>";
         }
-
+        $price = number_format($this->product->price, 2, '.', ',');
         $id = $this->product->id;
         return <<<Product
-            <form  class="row" action="products.php" method="post">
+            <form  class="row  shadow p-3 mb-5 bg-body rounded" action="products.php" method="post">
                 <input type="hidden" name="id" value="$id"/>
                 <div class="form-group row">
                     <div class="col">
-                        <h1>Ultimate Water Tecg</h1>t
+                        <h1 style="text-align: left">{$this->product->name}</h1>
                     </div>
                     $controlButtons
                 </div>
                 <div class="row">
                     <div class="col">
+                    Included Items:
                         <ul>
                             $itemMapped
                         </ul>
                     </div>
                     <div class="col">
                         <div class="row">
-                            <h3>{$this->product->price} Php</h3>
+                            <h3>$price Php</h3>
                         </div>
                         <div class="row">
                             <p>{$this->product->description}</p>

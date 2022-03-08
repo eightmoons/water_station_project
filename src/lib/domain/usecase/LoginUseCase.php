@@ -13,7 +13,7 @@ class LoginUseCase extends BaseUseCase {
         private readonly UserRepository $repository
     ) { }
 
-    public function __invoke(LoginParams|BaseParams $params): User
+    public function __invoke(LoginParams|BaseParams $params): ?User
     {
         return $this->repository->login($params);
     }

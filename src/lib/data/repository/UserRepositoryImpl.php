@@ -18,6 +18,7 @@ class UserRepositoryImpl extends UserRepository
     public function login(LoginParams $params): ?User
     {
         $user = $this->dao->readUserByUsername($params->username);
+        if (is_null($user)) return null;
         return $user->password == $params->password ? $user : null;
     }
 
@@ -26,7 +27,7 @@ class UserRepositoryImpl extends UserRepository
         return true;
     }
 
-    public function readUserById(ReadUserParams $params): User
+    public function readUserById(ReadUserParams $params): ?User
     {
         return $this->dao->readUserById($params->id);
     }

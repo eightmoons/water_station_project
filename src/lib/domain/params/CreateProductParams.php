@@ -4,9 +4,9 @@ namespace lib\domain\params;
 
 class CreateProductParams extends BaseParams {
     public function __construct(
-        public readonly string $name,
-        public readonly string $description,
-        public readonly string $items,
-        public readonly string $video
+        public string $name,
+        public string $description,
+        public string $items,
+        public float $price
     ) { }
 }

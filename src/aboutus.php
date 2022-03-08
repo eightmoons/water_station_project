@@ -1,6 +1,14 @@
 <?php
 session_start();
-$about_active = "active";
+
+require __DIR__ . '/lib/__init__.php';
+
+use lib\app\widgets\NavBarWidget;
+
+$navBar = new NavBarWidget(null);
+if (isset($_SESSION['id'])) {
+    $navBar = new NavBarWidget($_SESSION['id']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +48,9 @@ $about_active = "active";
 </head>
 
 <body>
-    
+
     <!-- Navbar Start -->
-  
-    <?php require_once "header.php"; ?>
-	
+    <?php echo $navBar->build(4) ?>
     <!-- Navbar End -->
 	
 	<br>

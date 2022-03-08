@@ -1,6 +1,14 @@
 <?php
 session_start();
-$contact_active = "active";
+
+require __DIR__ . '/lib/__init__.php';
+
+use lib\app\widgets\NavBarWidget;
+
+$navBar = new NavBarWidget(null);
+if (isset($_SESSION['id'])) {
+    $navBar = new NavBarWidget($_SESSION['id']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,16 +62,14 @@ $contact_active = "active";
 
 
     <!-- Navbar Start -->
-  
-    <?php require_once "header.php"; ?>
-	
+    <?php echo $navBar->build(5) ?>
     <!-- Navbar End -->
 
     <main role="main" class="container bodyy px-5">
         <h1>Contact Us</h1>
         <div class="row gx-5">
             <div class="col-md-5 col-sm-12 shadow p-3 mb-5 bg-white rounded ">
-                <h2 class="mt-5 text-center">Contact Info</h1>
+                <h2 class="mt-5 text-center">Contact Info</h2>
                 <div class="row">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Landline info: </strong>+63 02 555 1112</li>
@@ -74,7 +80,7 @@ $contact_active = "active";
             </div>
             <div class="col-md-2 col-sm-1"></div>
             <div class="col-md-5 col-sm-11 shadow p-3 mb-5 bg-white rounded align-right">
-                <h2 class="mt-5 text-center">Book an appointment</h1> 
+                <h2 class="mt-5 text-center">Book an appointment</h2>
                 <div class="btn btn-large btn-success btn-block container px-5 booknow">Book now</div>
             </div>
         </div>

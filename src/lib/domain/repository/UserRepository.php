@@ -10,5 +10,5 @@ use lib\domain\params\ReadUserParams;
 abstract class UserRepository {
     abstract function login(LoginParams $params): ?User;
     abstract function logout(NoParams $params): bool;
-    abstract function readUserById(ReadUserParams $params): User;
+    abstract function readUserById(ReadUserParams $params): ?User;
 }

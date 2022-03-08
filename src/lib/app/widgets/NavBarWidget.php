@@ -6,12 +6,11 @@ use lib\WaterStation;
 
 class NavBarWidget {
 
-    private readonly ?User $user;
+    private ?User $user;
     public function __construct(
         private readonly ?int $id
     ){
-        $readUserById = WaterStation::instance()->readUserById;
-        $this->user = $id == null ? null : $readUserById(new ReadUserParams($this->id));
+
     }
 
     public function build(int $page): string
@@ -22,12 +21,13 @@ class NavBarWidget {
         $about_active = $page == 4 ? "active" : "";
         $contact_active = $page == 5 ? "active" : "";
         $profile = "";
-
-        if ($this->user != null) {
+        if (!is_null($this->id)) {
+            $readUserById = WaterStation::instance()->readUserById;
+            $this->user = $readUserById(new ReadUserParams($this->id));
             $username = $this->user->username;
             $profile = <<<Profile
-            <div class="dropdown">
-                <a href="nav-item nav-link">$username</a>
+            <div class="dropdown nav-item nav-link dropdown-toggle">
+                <a href="nav-item nav-link ">$username </a>
                 <div class="dropdown-content">
                     <a href="logout.php">Logout</a>
                 </div>
