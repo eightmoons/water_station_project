@@ -29,7 +29,7 @@ CREATE TABLE `ws_products` (
   `items` varchar(512) NOT NULL,
   `price` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `ws_products` (
 
 LOCK TABLES `ws_products` WRITE;
 /*!40000 ALTER TABLE `ws_products` DISABLE KEYS */;
+INSERT INTO `ws_products` VALUES (1,'test','test','1',1),(2,'just another tubig','test','multiline\r\ntest\r\nhaha',5454530);
 /*!40000 ALTER TABLE `ws_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +55,7 @@ CREATE TABLE `ws_users` (
   `password` varchar(128) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,6 +64,7 @@ CREATE TABLE `ws_users` (
 
 LOCK TABLES `ws_users` WRITE;
 /*!40000 ALTER TABLE `ws_users` DISABLE KEYS */;
+INSERT INTO `ws_users` VALUES (1,'admin','admin');
 /*!40000 ALTER TABLE `ws_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-08  1:10:53
+-- Dump completed on 2022-03-08  9:44:54

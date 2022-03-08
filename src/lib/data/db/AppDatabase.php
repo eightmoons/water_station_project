@@ -6,11 +6,11 @@ use mysqli;
 
 class AppDatabase
 {
-    private string $host = "192.168.0.105";
-    private string $port = "9906";
+    private string $host = "127.0.0.1";
+    private string $port = "3306";
     private string $user = "root";
-    private string $pass = "rootpwd";
-    private string $name = "water_station_db";
+    private string $pass = "";
+    private string $name = "water_station_db1";
 
     public function getConnection(): mysqli
     {
