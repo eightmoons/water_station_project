@@ -7,8 +7,7 @@ class EditProductParams extends BaseParams {
         public int $id,
         public string $name,
         public string $description,
-        public string $image,
+        public string $items,
         public float $price,
-        public string $video
     ) { }
 }

@@ -15,13 +15,31 @@ if (isset($_SESSION['id'])) {
 $edit = false;
 $add = false;
 $submit = false;
+$delete = false;
+$save = false;
 $id = 0;
 if (isset($_POST['action'])) {
     $edit = $_POST['action'] == 'edit';
     $add = $_POST['action'] == 'add';
+    $delete = $_POST['action'] == 'delete';
     $submit = $_POST['action'] == 'submit';
+    $save = $_POST['action'] == 'save';
     if ($edit) {
         $id = $_POST['id'];
+    }
+    else if ($_POST['action'] == 'cancel') {
+        $id = null;
+    }
+    if ($save) {
+        $params = new \lib\domain\params\EditProductParams(
+            $_POST['id'],
+            $_POST['name'],
+            $_POST['description'],
+            $_POST['items'],
+            $_POST['price'],
+        );
+        $editor = \lib\WaterStation::instance()->editProductUseCase;
+        $result = $editor($params);
     }
     if ($submit) {
         $params = new \lib\domain\params\CreateProductParams(
@@ -33,6 +51,14 @@ if (isset($_POST['action'])) {
         $creator = \lib\WaterStation::instance()->createProductUseCase;
         $result = $creator($params);
     }
+    if ($delete) {
+        $params = new \lib\domain\params\DeleteProductParams(
+                $_POST['id']
+        );
+        $deleter = \lib\WaterStation::instance()->deleteProductUseCase;
+        $result = $deleter($params);
+    }
+
 }
 
 $productLoader = \lib\WaterStation::instance()->loadProductListUseCase;
