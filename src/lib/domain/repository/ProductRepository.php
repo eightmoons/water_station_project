@@ -10,7 +10,7 @@ use lib\domain\params\LoadProductListParams;
 
 abstract class ProductRepository {
     abstract public function loadProductList(LoadProductListParams $params): array;
-    abstract public function createProduct(CreateProductParams $params): Product;
-    abstract public function editProduct(EditProductParams $params): Product;
+    abstract public function createProduct(CreateProductParams $params): ?Product;
+    abstract public function editProduct(EditProductParams $params): ?Product;
     abstract public function deleteProduct(DeleteProductParams $params): bool;
 }

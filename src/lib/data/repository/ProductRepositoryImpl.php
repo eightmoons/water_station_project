@@ -22,12 +22,12 @@ class ProductRepositoryImpl extends ProductRepository
         return $this->dao->loadProductList($params);
     }
 
-    public function createProduct(CreateProductParams $params): Product
+    public function createProduct(CreateProductParams $params): ?Product
     {
         return $this->dao->createProduct($params);
     }
 
-    public function editProduct(EditProductParams $params): Product
+    public function editProduct(EditProductParams $params): ?Product
     {
         return $this->dao->editProduct($params);
     }

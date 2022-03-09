@@ -10,11 +10,11 @@ use lib\domain\params\EditProductParams;
 use lib\domain\params\LoadProductListParams;
 
 abstract class ProductDao {
-    abstract function createProduct(CreateProductParams $params): Product;
-    abstract function editProduct(EditProductParams $params): Product;
+    abstract function createProduct(CreateProductParams $params): ?Product;
+    abstract function editProduct(EditProductParams $params): ?Product;
     abstract function deleteProduct(DeleteProductParams $params): bool;
     abstract function loadProductList(LoadProductListParams $params): array;
-    abstract function readProduct(int $id): Product;
+    abstract function readProduct(int $id): ?Product;
 }
 
 class ProductDaoImpl extends ProductDao {
@@ -23,7 +23,7 @@ class ProductDaoImpl extends ProductDao {
         protected readonly AppDatabase $database
     ) { }
 
-    function createProduct(CreateProductParams $params): Product
+    function createProduct(CreateProductParams $params): ?Product
     {
         $conn = $this->database->getConnection();
         $stmt = $conn->prepare("INSERT INTO ws_products (name, description, items, price) VALUES (?,?,?,?)");
@@ -33,7 +33,7 @@ class ProductDaoImpl extends ProductDao {
         return $this->readProduct($stmt->insert_id);
     }
 
-    function editProduct(EditProductParams $params): Product
+    function editProduct(EditProductParams $params): ?Product
     {
         $conn = $this->database->getConnection();
         $stmt = $conn->prepare("UPDATE ws_products SET name=?,description=?,items=?,price=? WHERE id=?");
@@ -75,7 +75,7 @@ class ProductDaoImpl extends ProductDao {
         return $products;
     }
 
-    function readProduct(int $id): Product
+    function readProduct(int $id): ?Product
     {
         $conn = $this->database->getConnection();
         $stmt = $conn->prepare("SELECT * FROM ws_products WHERE id=?");

@@ -15,7 +15,7 @@ class EditProductUseCase extends BaseUseCase {
     ) { }
 
 
-    public function __invoke(EditProductParams|BaseParams $params): Product
+    public function __invoke(EditProductParams|BaseParams $params): ?Product
     {
         return $this->repository->editProduct($params);
     }

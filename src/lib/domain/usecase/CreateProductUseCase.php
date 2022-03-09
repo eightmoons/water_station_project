@@ -13,7 +13,7 @@ class CreateProductUseCase extends BaseUseCase {
         private readonly ProductRepository $repository
     ) { }
 
-    public function __invoke(CreateProductParams|BaseParams $params): Product
+    public function __invoke(CreateProductParams|BaseParams $params): ?Product
     {
         return $this->repository->createProduct($params);
     }
