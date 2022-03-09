@@ -9,7 +9,7 @@ class ProductWidget {
 
     public function build(bool $isEdit, bool $isLoggedIn): string
     {
-        return $isEdit ? $this->$this->editMode() : $this->viewMode($isLoggedIn);
+        return $isEdit ? $this->editMode() : $this->viewMode($isLoggedIn);
     }
 
     public function editMode(): string {
@@ -18,6 +18,7 @@ class ProductWidget {
             $isCreate = true;
             $this->product = new Product(0, "", "", "", 1);
         }
+
         $controlButtons = !$isCreate ?
             <<<SaveBtns
                     <button type="submit" class="btn btn-primary" name="action" value="save">Save</button>
