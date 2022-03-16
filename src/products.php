@@ -102,6 +102,7 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
     <link href="css/style.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/product-styles.css" rel="stylesheet">
+    <link href="css/product-page.css" rel="stylesheet">
 </head>
 
 <body>
@@ -113,7 +114,7 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
     <?php echo $navBar->build(2) ?>
     <!-- Navbar End -->
 
-
+    <div class="parallax">
     <main class="container" role="main">
         <h1>Products <?php echo isset($_SESSION['id']) ?'<a href="product-add.php"><span class="btn btn-success">Add Products</span></a>' : ''; ?></h1>
         <?php
@@ -126,6 +127,8 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
         ?>
         <h1><span class="btn btn-warning">Inquire Now!</span></h1>
     </main>
+    </div>
+
 
     <footer class="footer">
         <div class="footer-content">
