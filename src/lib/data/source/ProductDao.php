@@ -26,7 +26,7 @@ class ProductDaoImpl extends ProductDao {
     function createProduct(CreateProductParams $params): ?Product
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("INSERT INTO ws_products (name, description, items, price) VALUES (?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO ws_products (prod_name, prod_desc, items, prod_price) VALUES (?,?,?,?)");
         $stmt->bind_param('sssi', $params->name, $params->description, $params->items, $params->price);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -36,7 +36,7 @@ class ProductDaoImpl extends ProductDao {
     function editProduct(EditProductParams $params): ?Product
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("UPDATE ws_products SET name=?,description=?,items=?,price=? WHERE id=?");
+        $stmt = $conn->prepare("UPDATE ws_products SET prod_name=?,prod_desc=?,items=?,prod_price=? WHERE id=?");
         $stmt->bind_param('sssii', $params->name, $params->description, $params->items, $params->price, $params->id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -64,10 +64,10 @@ class ProductDaoImpl extends ProductDao {
             while ($row = $result->fetch_assoc()) {
                 $product = new Product(
                     $row['id'],
-                    $row['name'],
-                    $row['description'],
+                    $row['prod_name'],
+                    $row['prod_desc'],
                     $row['items'],
-                    $row['price'],
+                    $row['prod_price'],
                 );
                 array_push($products, $product);
             }
@@ -87,10 +87,10 @@ class ProductDaoImpl extends ProductDao {
             while ($row = $result->fetch_assoc()) {
                 $product = new Product(
                     $row['id'],
-                    $row['name'],
-                    $row['description'],
+                    $row['prod_name'],
+                    $row['prod_desc'],
                     $row['items'],
-                    $row['price'],
+                    $row['prod_price'],
                 );
             }
         }
