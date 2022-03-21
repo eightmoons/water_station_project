@@ -26,7 +26,7 @@ class UserDaoImpl extends UserDao {
         $user = null;
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $user = new User($row['id'], $row['username'], $row['password']);
+                $user = new User($row['id'], $row['uname'], $row['password']);
             }
         }
         return $user;
@@ -42,7 +42,7 @@ class UserDaoImpl extends UserDao {
         $user = null;
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $user = new User($row['id'], $row['username'], $row['password']);
+                $user = new User($row['id'], $row['uname'], $row['password']);
             }
         }
         return $user;

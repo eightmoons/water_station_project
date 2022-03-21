@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `ws_products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ws_products` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(256) NOT NULL,
-  `description` varchar(512) NOT NULL,
+  `prod_name` varchar(256) NOT NULL,
+  `prod_desc` varchar(512) NOT NULL,
   `items` varchar(512) NOT NULL,
-  `price` float NOT NULL DEFAULT '0',
+  `prod_price` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `ws_users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ws_users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(128) NOT NULL,
+  `uname` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
