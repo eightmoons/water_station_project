@@ -117,6 +117,8 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
     <div class="parallax">
     <main class="container" role="main">
         <h1>Products <?php echo isset($_SESSION['id']) ?'<a href="product-add.php"><span class="btn btn-success">Add Products</span></a>' : ''; ?></h1>
+        <div class="d-flex justify-content-center"><img src="img/Mask Group 1.png" alt="preview"></div>
+        
         <?php
         echo $add ? (new \lib\app\widgets\ProductWidget(null))->editMode() : "";
 
