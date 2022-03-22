@@ -139,7 +139,6 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
             <ul class="socials">
                 <li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
                 <li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="gg-instagram"></i></a></li>
             </ul>
         </div>
         <div class="footer-bottom">
