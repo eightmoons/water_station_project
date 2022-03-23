@@ -19,7 +19,7 @@ class UserDaoImpl extends UserDao {
     function readUserByUsername(string $username): ?User
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("SELECT * FROM ws_users WHERE username=? LIMIT 1");
+        $stmt = $conn->prepare("SELECT * FROM ws_users WHERE uname=? LIMIT 1");
         $stmt->bind_param("s",$username);
         $stmt->execute();
         $result = $stmt->get_result();
