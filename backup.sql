@@ -54,7 +54,7 @@ CREATE TABLE `ws_users` (
   `uname` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `uname` (`uname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
