@@ -49,9 +49,10 @@ if (isset($_SESSION['id'])) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
+	<link href="css/contacts-css.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: url(img/productbg.jpg);">
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -72,9 +73,11 @@ if (isset($_SESSION['id'])) {
                 <h2 class="mt-5 text-center">Contact Info</h2>
                 <div class="row">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Landline info: </strong>+63 02 555 1112</li>
-                        <li class="list-group-item"><strong>Cellphone info: </strong>+639991231234</li>
-                        <li class="list-group-item"><strong>Email: </strong> contactus@fgb888.com</li>
+                        <li class="list-group-item"><strong>Landline info: </strong>79187760</li>
+                        <li class="list-group-item"><strong>Cellphone info: </strong>+639165772839</li>
+                        <li class="list-group-item"><strong>Email: </strong>fgbwaterrefillingstation888@gmail.com</li>
+						 <li class="list-group-item"><strong>Facebook: </strong>https://bit.ly/3CLxtGx</li>
+						 <li class="list-group-item"><strong>Instagram: </strong></li>
                     </ul>
                 </div>
             </div>

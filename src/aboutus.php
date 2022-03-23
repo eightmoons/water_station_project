@@ -42,12 +42,13 @@ if (isset($_SESSION['id'])) {
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	<link href="css/contacts-css.css" rel="stylesheet">
 
     
     <link href="css/navbar.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: url(img/productbg.jpg);">
 
     <!-- Navbar Start -->
     <?php echo $navBar->build(4) ?>

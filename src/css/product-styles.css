@@ -21,9 +21,8 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
 }
-.footer {
-    position: relative;
-}
+
 .footer-content {
+
     background: #4dc4db;
 }

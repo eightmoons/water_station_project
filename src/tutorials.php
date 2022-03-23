@@ -43,13 +43,30 @@ if (isset($_SESSION['id'])) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
+	<link href="css/contacts-css.css" rel="stylesheet">
 </head>
 
-<body>
-
+<body style="background-image: url(img/productbg.jpg);">
     <!-- Navbar Start -->
     <?php echo $navBar->build(3) ?>
     <!-- Navbar End -->
+	<br>
+	<div class="tutorheader">
+		<center>
+		<h3>Machine Operation Procedure<h3>
+			</center>
+	</div>
+	<div class="videoWrapper">	
+		<iframe width="942" height="539" src="https://www.youtube.com/embed/9h_-vBYui_U?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		</div>
+		
+	<div class="maxWidth200">
+		<div class="iframe-container">	
+		</div>
+	</div>
+
+	<br>
 
 	<br>
 <br>

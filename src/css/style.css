@@ -291,14 +291,14 @@
 	font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
-	background: url('../img/stock-2.jpeg');
+	background: url('../img/ws1.jpg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 		font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
-	background: url('../img/stock-3.jpeg');
+	background: url('../img/ws2.jpeg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
@@ -491,4 +491,59 @@ h1{
     margin: 10px;
 	font-family: 'Questrial', sans-serif;
 	text-align: justify
+}
+
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------- TUTORIALS CSS PART  --------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+
+
+
+
+.tutorheader h3 {
+	font-family: 'Questrial', sans-serif;
+}
+	
+
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.maxWidth200 {
+	max-width: 300px;
+
+}
+
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	length: 100%;
 }
