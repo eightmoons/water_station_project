@@ -64,7 +64,7 @@ CREATE TABLE `ws_users` (
 
 LOCK TABLES `ws_users` WRITE;
 /*!40000 ALTER TABLE `ws_users` DISABLE KEYS */;
-INSERT INTO `ws_users` VALUES (1,'admin','admin');
+INSERT INTO `ws_users` VALUES (1,'admin','$2y$10$OiqYfMUZI8F5y030fQax2u0MDTS/ugUywGQNC/A34MpjkInS6ENsG');
 /*!40000 ALTER TABLE `ws_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

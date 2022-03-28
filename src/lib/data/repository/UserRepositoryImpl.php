@@ -19,7 +19,7 @@ class UserRepositoryImpl extends UserRepository
     {
         $user = $this->dao->readUserByUsername($params->username);
         if (is_null($user)) return null;
-        return $user->password == $params->password ? $user : null;
+        return password_verify($params->password, $user->password) ? $user : null;
     }
 
     public function logout(NoParams $params): bool

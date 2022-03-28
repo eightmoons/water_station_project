@@ -62,13 +62,6 @@ if (!isset($_SESSION['id'])) {
         <div class="btn">
         <button class="animate__animated animate__bounceInUp animate__delay-2s" name="submit" >Login</button>
       </div>
-      <?php 
-      if (isset($success)) {
-        if (!$success) {
-          echo "invalid username/password";
-        }
-      }
-      ?>
       </form>
 
     </div>
