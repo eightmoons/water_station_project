@@ -44,6 +44,7 @@ if (isset($_SESSION['id'])) {
     <link href="css/style.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
 	<link href="css/contacts-css.css" rel="stylesheet">
+    <link href="css/product-styles.css" rel="stylesheet">
 </head>
 
 <body style="background-image: url(img/productbg.jpg);">
@@ -51,12 +52,11 @@ if (isset($_SESSION['id'])) {
     <?php echo $navBar->build(3) ?>
     <!-- Navbar End -->
 	<br>
-	<div class="tutorheader">
-		<center>
-		<h3>Machine Operation Procedure<h3>
-			</center>
-	</div>
-	<div class="videoWrapper">	
+	<main class="container">
+		<div class="tutorheader">
+			<h3>Machine Operation Procedure<h3>
+		</div>
+		<div class="row">	
 		<iframe width="942" height="539" src="https://www.youtube.com/embed/9h_-vBYui_U?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		</div>
@@ -65,39 +65,9 @@ if (isset($_SESSION['id'])) {
 		<div class="iframe-container">	
 		</div>
 	</div>
+	</main>
 
-	<br>
-
-	<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<footer>
+	<footer>
 		<div class="footer-content">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
