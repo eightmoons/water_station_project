@@ -132,19 +132,19 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
     </div>
 
 
-    <footer>
-        <div class="footer-content">
-            <h3>FGB 888 MISSION</h3>
-            <p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
-            <ul class="socials">
-                <li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-                <li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2020 <span> FGB 888 </span></p>
-        </div>
-    </footer>
+	<footer>
+		<div class="footer-content row text-center">
+			<h3>FGB 888 MISSION</h3>
+			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
+			<ul class="socials">
+				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
+				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+			</ul>
+		</div>
+		<div class="footer-bottom">
+			<p>copyright &copy;2020 <span> FGB 888 </span></p>
+		</div>
+	</footer>
 
 
     <!-- Back to Top -->

@@ -83,7 +83,7 @@ if (isset($_SESSION['id'])) {
 
 
 <footer>
-		<div class="footer-content">
+		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
@@ -95,7 +95,6 @@ if (isset($_SESSION['id'])) {
 			<p>copyright &copy;2020 <span> FGB 888 </span></p>
 		</div>
 	</footer>
-	
 
     
     <!-- Back to Top -->

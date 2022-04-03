@@ -68,7 +68,7 @@ if (isset($_SESSION['id'])) {
 	</main>
 
 	<footer>
-		<div class="footer-content">
+		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
