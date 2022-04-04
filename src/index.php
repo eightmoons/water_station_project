@@ -107,7 +107,34 @@ if (isset($_SESSION['id'])) {
 		  <br>
         </p>
 	</center>
-		  
+
+  <section class="features-icons text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <h3>Lorem</h3>
+                            <p class="lead mb-0">Neque porro quisquam est qui </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3>Dolor</h3>
+                            <p class="lead mb-0">Neque porro quisquam est qui </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <h3>Ipsum</h3>
+                            <p class="lead mb-0">Neque porro quisquam est qui </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 <br>
 <footer>
 		<div class="footer-content row text-center">

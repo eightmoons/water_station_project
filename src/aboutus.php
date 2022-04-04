@@ -53,35 +53,25 @@ if (isset($_SESSION['id'])) {
     <!-- Navbar Start -->
     <?php echo $navBar->build(4) ?>
     <!-- Navbar End -->
-	
-	<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-
-
+        <header class="masthead">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3">Lorem ipsum</h1>
+                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="d-flex flex-column flex-lg-row align-items-center"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                        <img src="/img/Mask Group 1.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 <footer>
 		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
