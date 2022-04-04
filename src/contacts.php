@@ -84,7 +84,7 @@ if (isset($_SESSION['id'])) {
             <div class="col-md-2 col-sm-1"></div>
             <div class="col-md-5 col-sm-11 shadow p-3 mb-5 bg-white rounded align-right">
                 <h2 class="mt-5 text-center">Book an appointment</h2>
-                <div class="btn btn-large btn-success btn-block container px-5 booknow">Book now</div>
+                <a class="btn btn-large btn-success btn-block container px-5 booknow" href="#">Book now</a>
             </div>
         </div>
     </main>
