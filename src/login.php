@@ -17,7 +17,6 @@ if (isset($_SESSION['block_date'])) {
     if ($diff >= 30) {
         unset($_SESSION['block_date']);
         unset($_SESSION['error']);
-        unset($_SESSION['trial']);
         unset($_SESSION['err_msg']);
     }
 }
@@ -36,9 +35,9 @@ if (!isset($_SESSION['id'])) {
             header("Location: index.php");
             exit;
         }
-    else {
+        else {
             $_SESSION['error'] = true;
-            if ($_SESSION['trial'] = 3) {
+            if ($_SESSION['trial'] > 2) {
               $_SESSION['err_msg'] = 'Login Locked. Try again later';
               $_SESSION['block_date'] = date("Y-m-d H:i:s");
               $_SESSION['trial'] = 0;
@@ -47,7 +46,6 @@ if (!isset($_SESSION['id'])) {
               $_SESSION['err_msg'] = 'invalid username or password';
               $_SESSION['trial'] += 1;
             }
-
         }
     }
 } else {
