@@ -17,3 +17,13 @@ body {
     o-repeat;
     background-size: cover;
   }
+  
+  
+.container p{
+	text-align:justify
+	
+}
+
+.row gx-5{
+	font-family: 'Questrial', sans-serif;
+	

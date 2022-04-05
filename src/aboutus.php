@@ -43,6 +43,7 @@ if (isset($_SESSION['id'])) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/contacts-css.css" rel="stylesheet">
+	<link href="css/aboutus.css" rel="stylesheet">
 
     
     <link href="css/navbar.css" rel="stylesheet">
@@ -54,33 +55,68 @@ if (isset($_SESSION['id'])) {
     <?php echo $navBar->build(4) ?>
     <!-- Navbar End -->
 
-        <header class="masthead">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6">
-                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1 class="display-1 lh-1 mb-3">Lorem ipsum</h1>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="d-flex flex-column flex-lg-row align-items-center"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                        <img src="/img/Mask Group 1.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        
+		
+		
+		
+		
+		
+		<head>
+	<title>About Us Section</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="css/contacts-css.css" rel="stylesheet">
+</head>	
+<body style="background-image: url(img/productbg.jpg);">
+	<div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				<div class="content">
+					<h3>What We Do is More than a business</h3>
+					<p>The water industry remains to be one of the most vital industries globally. 
+					It isn’t just that water is a commodity; it’s life. Recognizing the growing need for sustainability and clean, drinkable water</p>
+					
+					<p>FGB 888 systems offers that caters to entrepreneurs who are not only able to maximize 
+					in the long run, but also consume less energy and produce zero water waste.</p>
+				</div>
+				<div class="social">
+					<a href="https://bit.ly/3CLxtGx"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/fgb888waterstation/?fbclid=IwAR3oREQMEqRc2pWf5_OiXLFFS9fFTKNpTTTDlp3ZMHE6rr1a4ninHQR44hY"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="image-section">
+				<img src="img/waterearth.jpg">
+			</div>
+		</div>
+	</div>
+
+	
+
+		
+		
+	
+		
+		
+		
+		
 <footer>
 		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
-				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+				<li><a href="https://bit.ly/3CLxtGx"><i class="gg-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/fgb888waterstation/?fbclid=IwAR3oREQMEqRc2pWf5_OiXLFFS9fFTKNpTTTDlp3ZMHE6rr1a4ninHQR44hY"><i class="gg-instagram"></i></a></li>
 			</ul>
 		</div>
+		
+		
+		
+		
 		<div class="footer-bottom">
 			<p>copyright &copy;2020 <span> FGB 888 </span></p>
 		</div>

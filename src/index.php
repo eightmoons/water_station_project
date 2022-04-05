@@ -77,7 +77,7 @@ if (isset($_SESSION['id'])) {
             <div class="info">
                 <h1 class="animate__animated animate__fadeInUpBig">Open for Franchising</h1>
                 <p class="animate__animated animate__fadeInLeftBig animate__delay-0.9s">Schedule and online meeting now</p>
-                <a class="btn btn-outline-light btn-lg">Schedule Now</a>
+                <a class="btn btn-outline-light btn-lg" href= "https://forms.gle/L2G1fZSwUnJ2Vb757">Schedule Now </a>
               </div>
           </div>
         </div>
@@ -108,41 +108,35 @@ if (isset($_SESSION['id'])) {
         </p>
 	</center>
 
-  <section class="features-icons text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Lorem</h3>
-                            <p class="lead mb-0">Neque porro quisquam est qui </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Dolor</h3>
-                            <p class="lead mb-0">Neque porro quisquam est qui </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Ipsum</h3>
-                            <p class="lead mb-0">Neque porro quisquam est qui </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section>
+		<div class="container">
+			<h1 class="fw-normal text-center display-4 py-3">Image Gallery</h1>
+			<div class="row" id="gallery">
+				<div class="col-12 col-sm-6 col-md-4 mx-auto my-3">
+					<a href="img/ws1.jpg">
+						<img src="img/ws1.jpg" alt="" class="img-fluid rounded">
+					</a>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 mx-auto my-3">
+					<a href="img/ws1.jpg">
+						<img src="img/ws1.jpg" alt="" class="img-fluid rounded">
+					</a>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 mx-auto my-3">
+					<a href="img/ws1.jpg">
+						<img src="img/ws1.jpg" alt="" class="img-fluid rounded">
+					</a>
+				</div>
+		</div>
+	</section>
 <br>
 <footer>
 		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
-				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+				<li><a href="https://bit.ly/3CLxtGx"><i class="gg-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/fgb888waterstation/?fbclid=IwAR3oREQMEqRc2pWf5_OiXLFFS9fFTKNpTTTDlp3ZMHE6rr1a4ninHQR44hY"><i class="gg-instagram"></i></a></li>
 			</ul>
 		</div>
 		<div class="footer-bottom">

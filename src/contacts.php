@@ -77,14 +77,15 @@ if (isset($_SESSION['id'])) {
                         <li class="list-group-item"><strong>Cellphone info: </strong>+639165772839</li>
                         <li class="list-group-item"><strong>Email: </strong>fgbwaterrefillingstation888@gmail.com</li>
 						 <li class="list-group-item"><strong>Facebook: </strong>https://bit.ly/3CLxtGx</li>
-						 <li class="list-group-item"><strong>Instagram: </strong></li>
+						 <li class="list-group-item"><strong>Instagram: </strong>fgb888waterstation</li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-2 col-sm-1"></div>
             <div class="col-md-5 col-sm-11 shadow p-3 mb-5 bg-white rounded align-right">
                 <h2 class="mt-5 text-center">Book an appointment</h2>
-                <a class="btn btn-large btn-success btn-block container px-5 booknow" href="#">Book now</a>
+				<a class="btn btn-large btn-success btn-block container px-5 booknow" href="https://forms.gle/L2G1fZSwUnJ2Vb757">Book now</a>
+           
             </div>
         </div>
     </main>
@@ -94,8 +95,8 @@ if (isset($_SESSION['id'])) {
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
-				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+				<li><a href="https://bit.ly/3CLxtGx"><i class="gg-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/fgb888waterstation/?fbclid=IwAR3oREQMEqRc2pWf5_OiXLFFS9fFTKNpTTTDlp3ZMHE6rr1a4ninHQR44hY"><i class="gg-instagram"></i></a></li>
 			</ul>
 		</div>
 		<div class="footer-bottom">

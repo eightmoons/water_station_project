@@ -284,21 +284,21 @@
 	position: relative;
 	height: 100%;
 	width:100%;
-	background: url('../img/stock-1.jpeg');
+	background: url('img/stock-1.jpeg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 	font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
-	background: url('../img/ws1.jpg');
+	background: url('img/water1.jpg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
 		font-family: 'Questrial', sans-serif;
 }
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
-	background: url('../img/ws2.jpeg');
+	background: url('img/water2.jpg');
 	background-size: 100% 100%;
 	background-position: center;
 	background-attachment: fixed;
@@ -546,4 +546,18 @@ h1{
 	left: 0;
 	width: 100%;
 	length: 100%;
+}
+
+
+
+.procedure img{
+	border-color: black;
+    width: 700px;
+	height: 700px;
+    margin: 10px;
+}
+
+
+parallax h2{
+	font-family: 'Questrial', sans-serif;
 }

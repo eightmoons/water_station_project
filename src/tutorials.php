@@ -54,54 +54,42 @@ if (isset($_SESSION['id'])) {
 	<br>
 	<main class="container">
 		<div class="tutorheader">
+			<center>
 			<h3>Machine Operation Procedure<h3>
+			<center>
 		</div>
 		<div class="row">	
-		<iframe width="942" height="539" src="https://www.youtube.com/embed/9h_-vBYui_U?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+		<iframe width="1280" height="720" src="https://www.youtube.com/embed/wm8pjhrDFVI" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen></iframe>
 		</div>
 		
 	<div class="maxWidth200">
 		<div class="iframe-container">	
 		</div>
 	</div>
-	<img src="/img/info-bg.gif" alt="">
+	<div class="procedure">
+	<center>
+	<img src="img/procedure.gif" alt="">
+	</center>
+	</div>
 	</main>
-	<section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Fully Responsive</h3>
-                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 5 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<footer>
 		<div class="footer-content row text-center">
 			<h3>FGB 888 MISSION</h3>
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
-				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+				<li><a href="https://bit.ly/3CLxtGx"><i class="gg-facebook"></i></a></li>
+				<li><a href="https://www.instagram.com/fgb888waterstation/?fbclid=IwAR3oREQMEqRc2pWf5_OiXLFFS9fFTKNpTTTDlp3ZMHE6rr1a4ninHQR44hY"><i class="gg-instagram"></i></a></li>
 			</ul>
 		</div>
 		<div class="footer-bottom">

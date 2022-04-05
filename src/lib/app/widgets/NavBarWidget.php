@@ -50,7 +50,7 @@ class NavBarWidget {
                     <a href="aboutus.php" class="nav-item nav-link $about_active">About Us</a>
                     <a href="contacts.php" class="nav-item nav-link $contact_active">Contact</a>
                     $profile
-                    <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Schedule Now!<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="https://forms.gle/L2G1fZSwUnJ2Vb757" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Schedule Now!<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </div>
         </nav>

@@ -105,7 +105,7 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
     <link href="css/product-page.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: url(img/productbg.jpg);">
     <!-- Spinner Start -->
 
     <!-- Spinner End -->
@@ -127,7 +127,7 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
         }
 
         ?>
-        <h1><span class="btn btn-warning">Inquire Now!</span></h1>
+        <h1><a class="btn btn-warning" href = "https://forms.gle/L2G1fZSwUnJ2Vb757">Inquire Now!</a></h1>
     </main>
     </div>
 
@@ -138,7 +138,7 @@ $products = $productLoader(new \lib\domain\params\LoadProductListParams());
 			<p>"To provide a high-quality purified drinking water that will ensure the customer's safety and satisfaction."</p>
 			<ul class="socials">
 				<li><a href="http://www.facebook.com/"><i class="gg-facebook"></i></a></li>
-				<li><a href="https://twitter.com/"><i class="gg-twitter"></i></a></li>
+				<li><a href="https://twitter.com/"><i class="gg-instagram"></i></a></li>
 			</ul>
 		</div>
 		<div class="footer-bottom">
