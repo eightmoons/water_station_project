@@ -41,6 +41,7 @@ if (!isset($_SESSION['id'])) {
             if ($_SESSION['trial'] >= 3) {
               $_SESSION['err_msg'] = 'Login Locked. Try again later';
               $_SESSION['block_date'] = date("Y-m-d H:i:s");
+              $_SESSION['trial'] = 0;
             }
             else {
               $_SESSION['err_msg'] = 'invalid username/password';
