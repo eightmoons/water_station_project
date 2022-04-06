@@ -18,6 +18,7 @@ if (isset($_SESSION['block_date'])) {
         unset($_SESSION['block_date']);
         unset($_SESSION['error']);
         unset($_SESSION['err_msg']);
+        $_SESSION['err_msg'] = "";
         $_SESSION['trial'] = 0;
     }
 }
