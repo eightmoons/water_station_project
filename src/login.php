@@ -66,6 +66,11 @@ if (!isset($_SESSION['id'])) {
 	
 </head>
 <body>
+<script>
+      if(window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+      }
+    </script>
 	<div class="container">
     <img src="img/fgblogo.png">
       <div class="top-header">
@@ -101,6 +106,5 @@ if (!isset($_SESSION['id'])) {
         }
         ?>
     </div>
-	
 </body>
 </html>
