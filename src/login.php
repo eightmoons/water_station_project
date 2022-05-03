@@ -105,6 +105,7 @@ if (!isset($_SESSION['id'])) {
             echo $_SESSION['err_msg'];
         }
         ?>
+        <a href="forgot.php">Forgot Password?</a>
     </div>
 </body>
 </html>

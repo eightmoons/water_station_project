@@ -12,3 +12,5 @@ require 'LoadProductListParams.php';
 require 'LoginParams.php';
 require 'NoParams.php';
 require 'ReadUserParams.php';
+require 'ForgotPasswordParams.php';
+require 'VerifyLinkParams.php';
