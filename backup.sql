@@ -60,7 +60,7 @@ CREATE TABLE ws_recovery (
   PRIMARY KEY (`id`),
   CONSTRAINT `code` UNIQUE  (`code`)
  ,
-  CONSTRAINT `ws_recovery_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES ws_users (`id`)
+  FOREIGN KEY (`user_id`) REFERENCES ws_users (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE INDEX `user_id` ON ws_recovery (`user_id`);
