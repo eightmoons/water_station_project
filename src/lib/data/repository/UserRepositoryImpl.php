@@ -38,7 +38,9 @@ class UserRepositoryImpl extends UserRepository
     function updatePassword(UpdatePasswordParams $params): ?User
     {
         $res = $this->recoverDao->searchByCode($params->code);
-        $params->code = $res->userId;
+        $user = $this->readUserById(new ReadUserParams($res->userId));
+        $params->code = $user->username;
+        $this->recoverDao->updateRecover($res->id);
         return $this->dao->updatePassword($params);
     }
 }

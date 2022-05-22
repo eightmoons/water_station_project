@@ -65,7 +65,7 @@ class WaterStation
         $this->userDao = new UserDaoImpl($this->appDatabase);
         $this->recoverDao = new RecoverDaoImpl($this->appDatabase);
         $this->productRepository = new ProductRepositoryImpl($this->productDao);
-        $this->userRepository = new UserRepositoryImpl($this->userDao);
+        $this->userRepository = new UserRepositoryImpl($this->userDao, $this->recoverDao);
         $this->recoveryRepository = new RecoveryRepositoryImpl($this->recoverDao, $this->userDao);
         $this->createProductUseCase = new CreateProductUseCase($this->productRepository);
         $this->deleteProductUseCase = new DeleteProductUseCase($this->productRepository);

@@ -17,8 +17,8 @@ if (!isset($_SESSION['id'])) {
         );
         $result = $forgot($params);
         if (!$result) {
-            $_SESSION['error'] = true;
-            $_SESSION['err_msg'] = 'e-mail does not match any account';
+            $_SESSION['error3'] = true;
+            $_SESSION['err_msg3'] = 'e-mail does not match any account';
         }
         else {
             header("Location: success.php");
@@ -36,6 +36,8 @@ if (!isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adminlog.css"/>
     <title>Admin Login</title>
 
 </head>
@@ -61,8 +63,8 @@ if (!isset($_SESSION['id'])) {
         </div>
     </form>
     <?php
-    if (isset($_SESSION['err_msg'])) {
-        echo $_SESSION['err_msg'];
+    if (isset($_SESSION['err_msg3'])) {
+        echo $_SESSION['err_msg3'];
     }
     ?>
 </div>

@@ -54,11 +54,11 @@ class UserDaoImpl extends UserDao {
     
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("UPDATE ws_users SET pass=? WHERE username=?");
+        $stmt = $conn->prepare("UPDATE ws_users SET password=? WHERE uname=?");
         $hash = password_hash($params->password, PASSWORD_DEFAULT);
-        $stmt->bind_param('ss', $hash,$params->username);
+        $stmt->bind_param('ss', $hash,$params->code);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $this->readUserByUsername($params->username);
+        return $this->readUserByUsername($params->code);
     }
 }

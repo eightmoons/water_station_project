@@ -16,9 +16,9 @@ if (isset($_SESSION['block_date'])) {
     $diff = $now->getTimestamp() - $date1->getTimestamp() ;
     if ($diff >= 30) {
         unset($_SESSION['block_date']);
-        unset($_SESSION['error']);
-        unset($_SESSION['err_msg']);
-        $_SESSION['err_msg'] = "";
+        unset($_SESSION['error1']);
+        unset($_SESSION['err_msg1']);
+        $_SESSION['err_msg1'] = "";
         $_SESSION['trial'] = 0;
     }
 }
@@ -38,13 +38,13 @@ if (!isset($_SESSION['id'])) {
             exit;
         }
         else {
-            $_SESSION['error'] = true;
+            $_SESSION['error1'] = true;
             if ($_SESSION['trial'] > 2) {
-              $_SESSION['err_msg'] = 'Login Locked. Try again later';
+              $_SESSION['err_msg1'] = 'Login Locked. Try again later';
               $_SESSION['block_date'] = date("Y-m-d H:i:s");
             }
             else {
-              $_SESSION['err_msg'] = 'invalid username or password';
+              $_SESSION['err_msg1'] = 'invalid username or password';
               $_SESSION['trial'] += 1;
             }
         }
@@ -88,8 +88,8 @@ if (!isset($_SESSION['id'])) {
         </div>
         <div class="btn">
             <?php
-            if (isset($_SESSION['err_msg'])) {
-                if ($_SESSION['err_msg'] != 'Login Locked. Try again later') {
+            if (isset($_SESSION['err_msg1'])) {
+                if ($_SESSION['err_msg1'] != 'Login Locked. Try again later') {
                     echo '<button class="animate__animated animate__bounceInUp animate__delay-2s" name="submit" >Login</button>';
                 }
             }
@@ -101,8 +101,8 @@ if (!isset($_SESSION['id'])) {
 
       </form>
         <?php
-        if (isset($_SESSION['err_msg'])) {
-            echo $_SESSION['err_msg'];
+        if (isset($_SESSION['err_msg1'])) {
+            echo $_SESSION['err_msg1'];
         }
         ?>
         <a href="forgot.php">Forgot Password?</a>

@@ -9,8 +9,7 @@ use lib\WaterStation;
 
 $error = false;
 if (!isset($_SESSION['id'])) {
-    if (isset($_GET['code'])) {
-        $_SESSION['code'] = $_GET['code'];
+    if (isset($_GET['code']) ) {
         $verify = WaterStation::instance()->verifyLinkUseCase;
         $params = new \lib\domain\params\VerifyLinkParams(
             $_GET['code']
@@ -28,18 +27,6 @@ if (!isset($_SESSION['id'])) {
         header("Location: index.php");
         exit;
     }
-    if (isset($_POST['submit'])) {
-        $update = WaterStation::instance()->updatePasswordUseCase;
-        $params = new \lib\domain\params\UpdatePasswordParams(
-            $_SESSION['code'],
-            $_POST['password']
-        );
-        $result = $update($params);
-        if (!$result) {
-            $_SESSION['error'] = true;
-            $_SESSION['err_msg'] = 'e-mail does not match any account';
-        }
-    }
 } else {
     header("Location: index.php");
     exit;
@@ -51,7 +38,8 @@ if (!isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adminlog.css"/>
     <title>Admin Login</title>
 
 </head>
@@ -67,18 +55,19 @@ if (!isset($_SESSION['id'])) {
         <h3  class="animate__animated animate__bounceInDown">Password Reset</h3>
         <p class="animate__animated animate__bounceInDown animate__delay-1s ">Please enter your new password</p>
     </div>
-    <form action="forgot.php" method="post">
+    <form action="change_pass.php" method="post">
         <div class="user animate__animated animate__fadeInUpBig animate__delay-1s">
             <i class="bx bxs-user-circle"></i>
             <input type="password" placeholder="Password" name="password" required/>
+            <input type="hidden" value="<?php echo $_GET['code'] ?>" name="code">
         </div>
         <div class="btn">
             <button class="animate__animated animate__bounceInUp animate__delay-2s" name="submit" >Submit</button>
         </div>
     </form>
     <?php
-    if (isset($_SESSION['err_msg'])) {
-        echo $_SESSION['err_msg'];
+    if (isset($_SESSION['err_msg2'])) {
+        echo $_SESSION['err_msg2'];
     }
 
     ?>
