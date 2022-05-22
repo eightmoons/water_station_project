@@ -25,6 +25,7 @@ use lib\domain\usecase\LoadProductListUseCase;
 use lib\domain\usecase\LoginUseCase;
 use lib\domain\usecase\LogOutUseCase;
 use lib\domain\usecase\ReadUserById;
+use lib\domain\usecase\UpdatePasswordUseCase;
 use lib\domain\usecase\VerifyLinkUseCase;
 
 class WaterStation
@@ -45,6 +46,7 @@ class WaterStation
     public readonly ReadUserById $readUserById;
     public readonly ForgotPasswordUseCase $forgotPasswordUseCase;
     public readonly VerifyLinkUseCase $verifyLinkUseCase;
+    public readonly UpdatePasswordUseCase $updatePasswordUseCase;
 
     public static function instance(): WaterStation
     {
@@ -74,6 +76,7 @@ class WaterStation
         $this->readUserById = new ReadUserById($this->userRepository);
         $this->forgotPasswordUseCase = new ForgotPasswordUseCase($this->recoveryRepository);
         $this->verifyLinkUseCase = new VerifyLinkUseCase($this->recoveryRepository);
+        $this->updatePasswordUseCase = new UpdatePasswordUseCase($this->userRepository);
     }
     public function __clone() {}
     public function __sleep() {}

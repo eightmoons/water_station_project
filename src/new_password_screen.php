@@ -10,6 +10,7 @@ use lib\WaterStation;
 $error = false;
 if (!isset($_SESSION['id'])) {
     if (isset($_GET['code'])) {
+        $_SESSION['code'] = $_GET['code'];
         $verify = WaterStation::instance()->verifyLinkUseCase;
         $params = new \lib\domain\params\VerifyLinkParams(
             $_GET['code']
@@ -28,11 +29,12 @@ if (!isset($_SESSION['id'])) {
         exit;
     }
     if (isset($_POST['submit'])) {
-        $forgot = WaterStation::instance()->forgotPasswordUseCase;
-        $params = new \lib\domain\params\ForgotPasswordParams(
-            $_POST['username']
+        $update = WaterStation::instance()->updatePasswordUseCase;
+        $params = new \lib\domain\params\UpdatePasswordParams(
+            $_SESSION['code'],
+            $_POST['password']
         );
-        $result = $forgot($params);
+        $result = $update($params);
         if (!$result) {
             $_SESSION['error'] = true;
             $_SESSION['err_msg'] = 'e-mail does not match any account';

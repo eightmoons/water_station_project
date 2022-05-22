@@ -2,6 +2,7 @@
 
 namespace lib\data\repository;
 
+use lib\data\source\RecoverDao;
 use lib\data\source\UserDao;
 use lib\domain\models\User;
 use lib\domain\params\LoginParams;
@@ -13,7 +14,8 @@ use lib\domain\repository\UserRepository;
 class UserRepositoryImpl extends UserRepository
 {
     public function __construct(
-        private readonly UserDao $dao
+        private readonly UserDao $dao,
+        private readonly RecoverDao $recoverDao
     ) { }
 
     public function login(LoginParams $params): ?User
@@ -35,6 +37,8 @@ class UserRepositoryImpl extends UserRepository
 
     function updatePassword(UpdatePasswordParams $params): ?User
     {
+        $res = $this->recoverDao->searchByCode($params->code);
+        $params->code = $res->userId;
         return $this->dao->updatePassword($params);
     }
 }
