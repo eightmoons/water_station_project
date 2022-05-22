@@ -4,10 +4,12 @@ namespace lib\data\source;
 
 use lib\data\db\AppDatabase;
 use lib\domain\models\User;
+use lib\domain\params\UpdatePasswordParams;
 
 abstract class UserDao {
     abstract function readUserByUsername(string $username): ?User;
     abstract function readUserById(int $id): ?User;
+    abstract function updatePassword(UpdatePasswordParams $params);
 }
 
 class UserDaoImpl extends UserDao {
@@ -46,5 +48,17 @@ class UserDaoImpl extends UserDao {
             }
         }
         return $user;
+    }
+
+    function updatePassword(UpdatePasswordParams $params): ?User
+    
+    {
+        $conn = $this->database->getConnection();
+        $stmt = $conn->prepare("UPDATE ws_users SET pass=? WHERE username=?");
+        $hash = password_hash($params->password, PASSWORD_DEFAULT);
+        $stmt->bind_param('ss', $hash,$params->username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $this->readUserByUsername($params->username);
     }
 }

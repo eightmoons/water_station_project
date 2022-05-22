@@ -14,3 +14,4 @@ require 'NoParams.php';
 require 'ReadUserParams.php';
 require 'ForgotPasswordParams.php';
 require 'VerifyLinkParams.php';
+require 'UpdatePasswordParams.php';

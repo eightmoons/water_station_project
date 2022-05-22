@@ -7,6 +7,7 @@ use lib\domain\models\User;
 use lib\domain\params\LoginParams;
 use lib\domain\params\NoParams;
 use lib\domain\params\ReadUserParams;
+use lib\domain\params\UpdatePasswordParams;
 use lib\domain\repository\UserRepository;
 
 class UserRepositoryImpl extends UserRepository
@@ -30,5 +31,10 @@ class UserRepositoryImpl extends UserRepository
     public function readUserById(ReadUserParams $params): ?User
     {
         return $this->dao->readUserById($params->id);
+    }
+
+    function updatePassword(UpdatePasswordParams $params): ?User
+    {
+        return $this->dao->updatePassword($params);
     }
 }

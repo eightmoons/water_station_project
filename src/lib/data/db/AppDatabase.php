@@ -6,11 +6,11 @@ use mysqli;
 
 class AppDatabase
 {
-    private string $host = "127.0.0.1";
-    private string $port = "3306";
+    private string $host = "192.168.0.106";
+    private string $port = "9906";
     private string $user = "root";
-    private string $pass = "";
-    private string $name = "water_station_db1";
+    private string $pass = "rootpwd";
+    private string $name = "water_station_db";
 
     public function getConnection(): mysqli
     {
@@ -23,7 +23,7 @@ class AppDatabase
             return $result;
         }
     }
-
+// docker exec be721afa53f7 /usr/bin/mysqldump -u root --password=rootpwd water_station_db > backup.sql
 //    public function createDatabase() {
 //        $db = /** @lang MariaDB */ <<<SQL_QUERY
 //        CREATE DATABASE IF NOT EXISTS {$this->name};

@@ -14,3 +14,4 @@ require 'LogOutUseCase.php';
 require 'ReadUserById.php';
 require 'ForgotPasswordUseCase.php';
 require 'VerifyLinkUseCase.php';
+require 'UpdatePasswordUseCase.php';

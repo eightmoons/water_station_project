@@ -7,7 +7,7 @@ use lib\domain\models\Recover;
 use lib\domain\models\User;
 
 abstract class RecoverDao {
-    abstract function generateLink(int $uid): ?Recover;
+    abstract function generateLink(int $uid): string;
     abstract function searchByCode(string $code): ?Recover;
     abstract function searchById(int $id): ?Recover;
     abstract function updateRecover(int $id): ?Recover;
@@ -21,7 +21,7 @@ class RecoverDaoImpl extends RecoverDao {
     ) { }
 
     function generateRandomString(): string {
-        $str = substr(str_shuffle(MD5(microtime())), 0, 32);
+        $str = substr(str_shuffle(MD5(microtime())), 0, 128);
         $recover = $this->searchByCode($str);
         if ($recover == null) {
             return $str;
@@ -31,15 +31,15 @@ class RecoverDaoImpl extends RecoverDao {
         }
     }
 
-    function generateLink(int $uid): ?Recover
+    function generateLink(int $uid): string
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("INSERT INTO ws_recovery (user_id, code) VALUES (?,?)");
+        $stmt = $conn->prepare("INSERT INTO ws_recovery (user_id, code, is_used) VALUES (?,?,0)");
         $res = $this->generateRandomString();
         $stmt->bind_param('ss', $uid, $res);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $this->searchById($stmt->insert_id);
+        return $res;
     }
 
     function searchByCode(string $code): ?Recover
@@ -78,7 +78,7 @@ class RecoverDaoImpl extends RecoverDao {
     function getActiveLink(int $uid): ?Recover
     {
         $conn = $this->database->getConnection();
-        $stmt = $conn->prepare("SELECT * FROM ws_recovery WHERE user_id=? AND is_active=1 LIMIT 1");
+        $stmt = $conn->prepare("SELECT * FROM ws_recovery WHERE user_id=? AND is_used=1 LIMIT 1");
         return $this->getId($stmt, $uid);
     }
 

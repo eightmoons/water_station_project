@@ -26,6 +26,11 @@ class RecoveryRepositoryImpl extends RecoveryRepository
         $user = $this->userDao->readUserByUsername($params->username);
         if (is_null($user)) return false;
         $result = $this->dao->getActiveLink($user->id);
+        if (is_null($result)) {
+//            mail("someone@example.com","My subject",$msg);
+            $result = $this->dao->generateLink($user->id);
+        }
+        mail($user->username, "Password Reset", "Click here to reset your password " . "http://localhost:1234/new_password_screen.php?code=" . $result);
         return !is_null($result);
     }
 

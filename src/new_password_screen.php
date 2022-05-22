@@ -8,8 +8,25 @@ use lib\domain\params\LoginParams;
 use lib\WaterStation;
 
 $error = false;
-
 if (!isset($_SESSION['id'])) {
+    if (isset($_GET['code'])) {
+        $verify = WaterStation::instance()->verifyLinkUseCase;
+        $params = new \lib\domain\params\VerifyLinkParams(
+            $_GET['code']
+        );
+        $result = $verify($params);
+        if ($result) {
+            $_SESSION['verif'] = 1;
+        }
+        else {
+            header("Location: invalid.php");
+            exit;
+        }
+    }
+    else {
+        header("Location: index.php");
+        exit;
+    }
     if (isset($_POST['submit'])) {
         $forgot = WaterStation::instance()->forgotPasswordUseCase;
         $params = new \lib\domain\params\ForgotPasswordParams(
@@ -19,10 +36,6 @@ if (!isset($_SESSION['id'])) {
         if (!$result) {
             $_SESSION['error'] = true;
             $_SESSION['err_msg'] = 'e-mail does not match any account';
-        }
-        else {
-            header("Location: success.php");
-            exit;
         }
     }
 } else {
@@ -36,6 +49,7 @@ if (!isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Login</title>
 
 </head>
@@ -48,13 +62,13 @@ if (!isset($_SESSION['id'])) {
 <div class="container">
     <img src="img/fgblogo.png">
     <div class="top-header">
-        <h3  class="animate__animated animate__bounceInDown">Forgot Password</h3>
-        <p class="animate__animated animate__bounceInDown animate__delay-1s ">Please enter your email address to continue</p>
+        <h3  class="animate__animated animate__bounceInDown">Password Reset</h3>
+        <p class="animate__animated animate__bounceInDown animate__delay-1s ">Please enter your new password</p>
     </div>
     <form action="forgot.php" method="post">
         <div class="user animate__animated animate__fadeInUpBig animate__delay-1s">
             <i class="bx bxs-user-circle"></i>
-            <input type="email" placeholder="E-mail Address" name="username" required/>
+            <input type="password" placeholder="Password" name="password" required/>
         </div>
         <div class="btn">
             <button class="animate__animated animate__bounceInUp animate__delay-2s" name="submit" >Submit</button>
@@ -64,6 +78,7 @@ if (!isset($_SESSION['id'])) {
     if (isset($_SESSION['err_msg'])) {
         echo $_SESSION['err_msg'];
     }
+
     ?>
 </div>
 </body>
